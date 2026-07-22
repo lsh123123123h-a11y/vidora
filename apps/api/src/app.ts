@@ -1,6 +1,7 @@
 // import "./logger";
 import "./err";
 import "./env";
+import { runtimeConfig } from "./env";
 import express, { Request, Response, NextFunction } from "express";
 import { Server } from "socket.io";
 import http from "node:http";
@@ -31,6 +32,10 @@ export default async function startServe(randomPort: Boolean = false) {
   app.use(cors({ origin: "*" }));
   app.use(express.json({ limit: "100mb" }));
   app.use(express.urlencoded({ extended: true, limit: "100mb" }));
+
+  app.get("/healthz", (_req, res) => {
+    res.json({ status: "ok" });
+  });
 
   // oss 静态资源
   const ossDir = u.getPath("oss");
@@ -114,7 +119,7 @@ export default async function startServe(randomPort: Boolean = false) {
   app.use("/assets", express.static(assetsDir, { acceptRanges: false }));
 
   // data/web 静态网站
-  const webDir = u.getPath("web");
+  const webDir = runtimeConfig.webDir;
   if (fs.existsSync(webDir)) {
     console.log("静态网站目录:", webDir);
     app.use(express.static(webDir, { acceptRanges: false }));
@@ -158,9 +163,9 @@ export default async function startServe(randomPort: Boolean = false) {
     res.status(err.status || 500).send(err);
   });
 
-  const port = randomPort ? 0 : 10588;
+  const port = randomPort ? 0 : runtimeConfig.port;
   return await new Promise((resolve) => {
-    server.listen(port, async () => {
+    server.listen(port, runtimeConfig.host, async () => {
       const address = server.address();
       const realPort = typeof address === "string" ? address : address?.port;
       console.log(`[服务启动成功]: http://localhost:${realPort}`);

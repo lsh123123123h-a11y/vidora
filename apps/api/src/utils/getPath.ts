@@ -1,8 +1,9 @@
 import path from "path";
 import isPathInside from "is-path-inside";
+import { readRuntimeConfig } from "../runtimeConfig";
 
 export default (fileName?: string[] | string) => {
-  const basePath = path.join(process.cwd(), "data");
+  const basePath = readRuntimeConfig(process.env, process.cwd()).dataDir;
   if (fileName) {
     let dbPath: string;
     if (Array.isArray(fileName)) {

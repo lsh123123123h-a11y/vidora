@@ -1,0 +1,28 @@
+# Local configuration and secrets
+.env*
+!.env.example
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.vite/
+
+# Runtime and local data
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+uploads/
+logs/
+*.log
+
+# Nested repositories and local tooling
+**/.git/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

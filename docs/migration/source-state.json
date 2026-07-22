@@ -1,0 +1,42 @@
+{
+  "capturedAt": "2026-07-23T07:28:40.9711295+08:00",
+  "statusCommand": "git status --short --branch",
+  "sources": {
+    "api": {
+      "path": "E:/AIProjects/ToonFlow-Dev/Toonflow-app",
+      "head": "16f9f3445640e075132385dea897caa70bd5bf93",
+      "statusOutput": "warning: could not open directory 'data/skills/story_skills/都市恋爱 /': No such file or directory\n## baseline/protected\n D .github/workflows/debug.yml\n D .github/workflows/release.yml\n M Dockerfile\n M NOTICES.txt\n M README.md\n M data/serve/app.js\n M data/skills/production_agent_supervision.md\n M data/skills/production_execution_derive_assets.md\n M data/skills/production_skills/storyboard_table_techniques.md\n M data/vendor/null.ts\n M data/web/css.worker-BvV5MPou.js\n M data/web/html.worker-BLJhxQJQ.js\n M data/web/index.html\n M data/web/json.worker-usMZ-FED.js\n M data/web/ts.worker-DGHjMaqB.js\n D electron-builder.yml\n M package.json\n M scripts/build.ts\n D scripts/installer.nsh\n D scripts/logo.ico\n D scripts/logo.png\n D scripts/main.ts\n M src/agents/productionAgent/index.ts\n M src/agents/scriptAgent/index.ts\n M src/agents/scriptAgent/tools.ts\n M src/app.ts\n M src/env.ts\n M src/router.ts\n M src/routes/assets/saveAssets.ts\n M src/routes/assetsGenerate/batchGenerateImageAssets.ts\n M src/routes/assetsGenerate/batchPolishAssetsPrompt.ts\n M src/routes/assetsGenerate/generateAssets.ts\n M src/routes/assetsGenerate/polishAssetsPrompt.ts\n M src/routes/production/assets/batchGenerateAssetsImage.ts\n M src/routes/production/editImage/generateFlowImage.ts\n M src/routes/production/storyboard/batchAddStoryboardInfo.ts\n M src/routes/production/storyboard/batchGenerateImage.ts\n M src/routes/production/workbench/batchGeneratePrompt.ts\n M src/routes/production/workbench/batchGenerateVideo.ts\n M src/routes/production/workbench/generateVideo.ts\n M src/routes/production/workbench/generateVideoPrompt.ts\n M src/routes/project/getModelDetails.ts\n M src/routes/setting/fileManagement/openFolder.ts\n M src/routes/setting/vendorConfig/deleteVendor.ts\n M src/routes/setting/vendorConfig/upVendorModel.ts\n M src/types/database.d.ts\n M src/utils/agent/memory.ts\n M src/utils/ai.ts\n M src/utils/getPath.ts\n M src/utils/oss.ts\n M yarn.lock\n?? console.log(m.default.vendor.getVendor(process.argv[3])))\n?? data/vendor.web-before-migration/\n?? docs/superpowers/\n?? src/lib/characterGenerationPolicy.ts\n?? src/lib/configIntegrity.ts\n?? src/lib/imageRequestRetry.ts\n?? src/lib/mediaGenerationResult.ts\n?? src/lib/openaiCompatibleModels.ts\n?? src/lib/productionGenerationPolicy.ts\n?? src/lib/productionGenerationService.ts\n?? src/lib/roleDerivativeGenerationService.ts\n?? src/lib/storyboardGenerationSelection.ts\n?? src/lib/videoPromptContextService.ts\n?? src/routes/assetsGenerate/getEffectivePrompt.ts\n?? src/routes/setting/vendorConfig/fetchModels.ts\n?? src/utils/agent/requestTimeout.ts\n?? tests/"
+    },
+    "web": {
+      "path": "E:/AIProjects/ToonFlow-Dev/Toonflow-web",
+      "head": "c861a79977b9852f8711849caa74af45dac303fe",
+      "statusOutput": "## baseline/protected\n M src/components/setting/components/vendorConfig.vue\n M src/stores/productionAgent.ts\n M src/stores/scriptAgent.ts\n M src/utils/assetsCheck.ts\n M src/views/assets/components/generateImage.vue\n M src/views/assets/index.vue\n M src/views/production/components/editImage/generatedNode.vue\n M src/views/production/components/editImage/index.vue\n M \"src/views/production/components/workbench/generate copy.vue\"\n M src/views/production/components/workbench/generate/components/imageSelect.vue\n M src/views/production/components/workbench/generate/components/modeMenu.vue\n M src/views/production/components/workbench/generate/index.vue\n M src/views/production/node/assets.vue\n M tsconfig.app.json\n?? src/utils/videoGenerationPolicy.ts"
+    }
+  },
+  "destination": {
+    "api": {
+      "path": "apps/api",
+      "manifestFileCount": 600
+    },
+    "web": {
+      "path": "apps/web",
+      "manifestFileCount": 462
+    }
+  },
+  "intentionalExclusions": [
+    "nested .git directories",
+    "node_modules directories",
+    "dist directories",
+    "local SQLite files (*.sqlite, *.sqlite3, *.db, *.db-wal, *.db-shm)",
+    "logs directories and *.log files",
+    "uploads directories",
+    "cache, caches, .cache, and .vite directories"
+  ],
+  "verification": {
+    "sourceRepositoriesCopied": "copy only; source working trees were not moved or deleted",
+    "sourceStatusRechecked": true,
+    "sourceStatusRecheck": "HEAD and git status --short --branch match the captured values for both source repositories",
+    "destinationExclusionsRechecked": true,
+    "manifestComparison": "relative manifests match exactly after applying intentional exclusions"
+  }
+}

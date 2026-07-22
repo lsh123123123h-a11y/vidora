@@ -4,6 +4,10 @@
 .env
 .env.*
 !.env.example
+secrets/
+secrets/**
+**/secrets/
+**/secrets/**
 **/.git
 **/.git/**
 **/node_modules

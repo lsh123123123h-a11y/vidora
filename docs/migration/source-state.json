@@ -67,7 +67,7 @@
     "sourceStatusRecheck": "HEAD and git status --short --branch match the captured values for both source repositories",
     "destinationExclusionsRechecked": true,
     "manifestComparison": "relative manifests match exactly after applying intentional exclusions",
-    "trackedCountsCommand": "git ls-files apps/api/apps/web",
+    "trackedCountsCommand": "git ls-files -- apps/api; git ls-files -- apps/web",
     "trackedCountsRechecked": true
   }
 }

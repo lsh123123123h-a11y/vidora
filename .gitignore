@@ -1,6 +1,9 @@
 # Local configuration and secrets
 .env*
 !.env.example
+secrets/
+**/secrets/
+**/secrets/**
 
 # Dependencies and generated output
 node_modules/

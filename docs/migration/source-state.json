@@ -16,11 +16,13 @@
   "destination": {
     "api": {
       "path": "apps/api",
-      "manifestFileCount": 600
+      "copiedFileCount": 600,
+      "trackedFileCount": 536
     },
     "web": {
       "path": "apps/web",
-      "manifestFileCount": 462
+      "copiedFileCount": 462,
+      "trackedFileCount": 458
     }
   },
   "intentionalExclusions": [
@@ -32,11 +34,40 @@
     "uploads directories",
     "cache, caches, .cache, and .vite directories"
   ],
+  "intentionallyRetainedAssets": [
+    {
+      "path": "apps/api/data/models/all-MiniLM-L6-v2/onnx/model_fp16.onnx",
+      "reason": "Runtime embedding model input retained for current API behavior and later Docker data seeding."
+    },
+    {
+      "path": "apps/api/data/serve/app.js",
+      "reason": "Existing API-served bundle retained as a current runtime/build input until the later API rebuild."
+    },
+    {
+      "path": "apps/api/data/web/index.html",
+      "reason": "Existing generated Web artifact retained as migration input; Task 4 will rebuild Web assets from source."
+    },
+    {
+      "path": "apps/api/data/assets/** and apps/api/data/oss/**",
+      "reason": "Existing media and generated resources intentionally preserved as runtime data."
+    },
+    {
+      "path": "apps/api/data/skills/** and apps/api/data/modelPrompt/**",
+      "reason": "Agent skills and generation prompt templates are required runtime inputs and later Docker seed/build inputs."
+    },
+    {
+      "path": "apps/api/data/vendor/** and apps/web/src/lib/vendorTemplate.ts",
+      "reason": "AI vendor templates/configuration source intentionally preserved for existing integrations and later packaging."
+    }
+  ],
+  "retentionNote": "These large assets are intentionally retained for current operation or later Docker build inputs. Task 4/5 will rebuild the Web and service packages from source; this audit does not claim generated artifacts are the final release bundle.",
   "verification": {
     "sourceRepositoriesCopied": "copy only; source working trees were not moved or deleted",
     "sourceStatusRechecked": true,
     "sourceStatusRecheck": "HEAD and git status --short --branch match the captured values for both source repositories",
     "destinationExclusionsRechecked": true,
-    "manifestComparison": "relative manifests match exactly after applying intentional exclusions"
+    "manifestComparison": "relative manifests match exactly after applying intentional exclusions",
+    "trackedCountsCommand": "git ls-files apps/api/apps/web",
+    "trackedCountsRechecked": true
   }
 }

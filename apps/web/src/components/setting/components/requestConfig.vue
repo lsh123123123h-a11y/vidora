@@ -3,7 +3,7 @@
     <t-alert style="margin-bottom: 16px" theme="warning" :message="$t('settings.request.warning')"></t-alert>
     <t-form :data="formData" labelAlign="top" :rules="formRules">
       <t-form-item :label="$t('settings.request.apiAddress')" name="baseUrl">
-        <t-input v-model="formData.baseUrl" :placeholder="$t('settings.request.apiPlaceholder')" clearable>
+        <t-input v-model="formData.baseUrl" :placeholder="$t('settings.request.apiPlaceholder')" readonly>
           <template #prefix-icon>
             <t-icon name="link" />
           </template>
@@ -13,7 +13,6 @@
         <t-space size="small">
           <t-button theme="primary" type="submit" @click="handleSubmit">{{ $t("settings.request.save") }}</t-button>
           <t-button theme="default" @click="handleReset">{{ $t("settings.request.reset") }}</t-button>
-          <t-button v-if="isElectron" theme="warning" @click="refreshAPI">{{ $t("settings.request.refresh") }}</t-button>
         </t-space>
       </t-form-item>
     </t-form>
@@ -24,7 +23,8 @@
 import { ref, onMounted } from "vue";
 import { type FormRules } from "tdesign-vue-next";
 import settingStore from "@/stores/setting";
-const { baseUrl, isElectron } = storeToRefs(settingStore());
+import { getApiBaseUrl } from "@/utils/runtimeUrl";
+const { baseUrl } = storeToRefs(settingStore());
 
 interface RequestForm {
   baseUrl: string;
@@ -50,28 +50,15 @@ function loadSettings() {
 }
 
 function handleSubmit() {
+  formData.value.baseUrl = getApiBaseUrl();
   baseUrl.value = formData.value.baseUrl;
   window.$message.success($t("settings.request.msg.saved"));
 }
 
 function handleReset() {
-  formData.value.baseUrl = "http://localhost:10588";
+  formData.value.baseUrl = getApiBaseUrl();
   baseUrl.value = formData.value.baseUrl;
   window.$message.success($t("settings.request.msg.reset"));
-}
-
-async function refreshAPI() {
-  try {
-    const res = await fetch("toonflow://getAppUrl");
-    const data = await res.json();
-    if (data?.port) {
-      baseUrl.value = data.url;
-      isElectron.value = true;
-      window.$message.success($t("settings.request.msg.refreshSuccess"));
-    }
-  } catch (error) {
-    window.$message.error($t("settings.request.msg.refreshFailed"));
-  }
 }
 
 onMounted(() => {

@@ -1,4 +1,5 @@
 import axios from "@/utils/axios";
+import { getSocketNamespaceUrl } from "@/utils/runtimeUrl";
 import projectStore from "@/stores/project";
 import settingStore from "@/stores/setting";
 import { useChat } from "@/utils/useChat";
@@ -18,7 +19,7 @@ function makeScriptAgentStore(projectId: string) {
         });
 
         const { connected, messages, chat, stopGenerate, socket, status, disconnect, connect } = useChat({
-          url: `${settingStore().baseUrl}/socket/scriptAgent`,
+          url: getSocketNamespaceUrl(undefined, "scriptAgent"),
           auth: () => ({
             isolationKey: `${projectId}:scriptAgent`,
             projectId: projectId,

@@ -2,12 +2,6 @@
   <div class="otherConfig">
     <t-form label-align="top">
       <t-alert theme="warning">{{ $t("settings.dev.warning") }}</t-alert>
-      <t-form-item :label="$t('settings.dev.devtool')" name="showTitleBar">
-        <t-button theme="primary" @click="openDevTool">{{ $t("settings.dev.openDevtool") }}</t-button>
-      </t-form-item>
-      <t-form-item :label="$t('settings.dev.aiDevtool')" name="showTitleBar">
-        <t-switch v-model="isElectron" @change="getSwitchAiDevTool" />
-      </t-form-item>
       <t-form-item :label="$t('settings.dev.switchAiDevTool')" name="showTitleBar">
         <t-switch :customValue="['1', '0']" v-model="switchAiDevTool" @change="updateSwitchAiDevTool" />
         <template #tips>
@@ -77,8 +71,6 @@
 import { CodeEditor } from "monaco-editor-vue3";
 import axios from "@/utils/axios";
 import { DialogPlugin } from "tdesign-vue-next";
-import settingStore from "@/stores/setting";
-const { isElectron } = storeToRefs(settingStore());
 
 const switchAiDevTool = ref("0");
 const localStorageKeyword = ref("");
@@ -130,18 +122,6 @@ const filteredLocalStorageRows = computed(() => {
   const keyword = localStorageKeyword.value.trim().toLowerCase();
   return localStorageRows.value.filter((item) => item.key.toLowerCase().includes(keyword) || item.value.toLowerCase().includes(keyword));
 });
-
-function openDevTool() {
-  if (isElectron.value) {
-    try {
-      fetch("toonflow://openDevTool");
-    } catch (error) {
-      window.$message?.warning($t("settings.dev.openDevtoolFailed"));
-    }
-  } else {
-    window.$message?.warning($t("settings.dev.notInElectron"));
-  }
-}
 
 async function getSwitchAiDevTool() {
   const { data } = await axios.get("/setting/dev/getSwitchAiDevTool");

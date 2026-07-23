@@ -1,4 +1,5 @@
 import axios from "@/utils/axios";
+import { getSocketNamespaceUrl } from "@/utils/runtimeUrl";
 import projectStore from "@/stores/project";
 import settingStore from "@/stores/setting";
 import { useChat } from "@/utils/useChat";
@@ -40,7 +41,7 @@ function makeProductionAgentStore(projectId: string) {
     const episodesId = ref<number>();
 
     const { connected, messages, chat, stopGenerate, socket, status, reconnect, connect, disconnect } = useChat({
-      url: `${settingStore().baseUrl}/socket/productionAgent`,
+      url: getSocketNamespaceUrl(undefined, "productionAgent"),
       auth: () => ({
         isolationKey: `${projectId}:productionAgent:${episodesId.value}`,
         projectId: projectId,

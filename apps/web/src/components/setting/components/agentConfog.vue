@@ -159,8 +159,6 @@
 import modelSelect from "@/components/modelSelect.vue";
 import { providersLogo, modelProviderRules } from "@/utils/providersLogo";
 import axios from "@/utils/axios";
-import settingStore from "@/stores/setting";
-const { isElectron } = storeToRefs(settingStore());
 
 interface ModelType {
   id: number;
@@ -425,11 +423,7 @@ onMounted(() => {
 
 //跳转官方网站
 async function jumpToWebsite() {
-  if (isElectron.value) {
-    await fetch(`toonflow://openurlwithbrowser?url=https://platform.deepseek.com`);
-  } else {
-    window.open("https://platform.deepseek.com", "_blank");
-  }
+  window.open("https://platform.deepseek.com", "_blank", "noopener,noreferrer");
 }
 </script>
 

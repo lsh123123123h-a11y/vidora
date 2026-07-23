@@ -358,21 +358,14 @@
     "about": {
       "slogan": "開源的 AI 驅動漫畫 / 分鏡創作工具",
       "latestVersion": "目前為最新版本",
-      "checkUpdate": "檢查更新",
       "codeRepository": "程式碼儲存庫",
       "githubRepo": "GitHub 儲存庫",
       "giteeRepo": "Gitee 儲存庫",
       "versionUpdate": "版本更新",
-      "checkUpdateGithub": "檢查更新(GitHub)",
-      "getFromGithub": "從 GitHub Release 取得最新版本",
-      "checkUpdateGitee": "檢查更新(Gitee)",
-      "getFromGitee": "從 Gitee Release 取得最新版本",
       "license": "授權條款",
       "licenseDesc": "開源授權條款·點擊查看詳情",
       "updateAvailable": "發現新版本",
-      "upToDate": "偵測到新版本",
-      "confirmReinstall": "複製連結",
-      "reinstallRequired": "將自動開啟瀏覽器並下載，如未開啟請手動開啟"
+      "upToDate": "偵測到新版本"
     },
     "logout": {
       "warning": "登出後，您需要重新登入才能繼續使用系統。",
@@ -415,7 +408,7 @@
       "devtoolsDoc": "文件地址",
       "devtoolsDesc": "開啟後會在Toonflow安裝目錄建立.devtools資料夾，請確保Toonflow有寫入權限（管理員身分執行）。",
       "openDevtoolFailed": "開啟開發者工具失敗，請確保已安裝Toonflow桌面端",
-      "notInElectron": "WEB環境請手動開啟瀏覽器控制台"
+      "browserDevtool": "請使用瀏覽器開發者工具"
     }
   },
   "workbench": {

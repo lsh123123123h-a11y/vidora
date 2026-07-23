@@ -325,7 +325,6 @@
       "restoreDefault": "デフォルトに戻す",
       "regexPlaceholder": "正規表現を入力してください",
       "showTitleBar": "タイトルバーを表示する",
-      "isElectron": "デスクトップモードに切り替える",
       "canvasScroll": "キャンバススクロール",
       "canvasIsDisabled": "キャンバスのズーム",
       "agentCanvasScalingMethod": "制作ページでの無制限のキャンバス ホイール操作",
@@ -352,21 +351,14 @@
     "about": {
       "slogan": "オープンソースのAI主導コミック/絵コンテ制作ツール",
       "latestVersion": "現在は最新バージョンです",
-      "checkUpdate": "アップデートの確認",
       "codeRepository": "コードリポジトリ",
       "githubRepo": "GitHub リポジトリ",
       "giteeRepo": "Gitee リポジトリ",
       "versionUpdate": "バージョンアップデート",
-      "checkUpdateGithub": "アップデート確認 (GitHub)",
-      "getFromGithub": "GitHub Releaseから最新版を取得",
-      "checkUpdateGitee": "アップデート確認 (Gitee)",
-      "getFromGitee": "Gitee Releaseから最新版を取得",
       "license": "ライセンス",
       "licenseDesc": "オープンソースライセンス・クリックして詳細を確認",
       "updateAvailable": "新しいバージョンが見つかりました",
-      "upToDate": "新しいバージョンが検出されました",
-      "confirmReinstall": "リンクをコピー",
-      "reinstallRequired": "ブラウザが自動的に開いてダウンロードされます。開かない場合は手動で開いてください。"
+      "upToDate": "新しいバージョンが検出されました"
     },
     "logout": {
       "warning": "ログアウト後、システムを継続して使用するには再ログインが必要です。",
@@ -411,7 +403,7 @@
       "devtoolsDesc": "オンにすると、Toonflow のインストール ディレクトリに .devtools フォルダーが作成されます。 Toonflow に書き込み権限があることを確認してください (管理者として実行)。",
       "devtoolsDesc2": "このディレクトリで npx {'@'}ai-sdk/devtools を実行して、テレメトリのデバッグを有効にします",
       "openDevtoolFailed": "開発者ツールを開けませんでした。Toonflow デスクトップがインストールされていることを確認してください",
-      "notInElectron": "WEB環境の場合はブラウザコンソールを手動で開いてください"
+      "browserDevtool": "ブラウザの開発者ツールを使用してください"
     }
   },
   "workbench": {

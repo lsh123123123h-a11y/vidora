@@ -1,12 +1,13 @@
+import { getApiBaseUrl } from "@/utils/runtimeUrl";
+
 export default defineStore(
   "setting",
   () => {
     const showSetting = ref(false);
-    const isElectron = ref(false);
     const canvasWheelEvent = ref("zoom");
     const activeMenu = ref("ui");
 
-    const baseUrl = ref<string>("http://localhost:10588/api");
+    const baseUrl = ref<string>(getApiBaseUrl());
 
     const needUpdate = ref(false);
 
@@ -30,7 +31,7 @@ export default defineStore(
 
     const language = ref<string>("zh-CN");
 
-    return { showSetting, baseUrl, otherSetting, themeSetting, language, activeMenu, isElectron, canvasWheelEvent, needUpdate };
+    return { showSetting, baseUrl, otherSetting, themeSetting, language, activeMenu, canvasWheelEvent, needUpdate };
   },
-  { persist: { pick: ["baseUrl", "otherSetting", "themeSetting", "language"] } },
+  { persist: { pick: ["otherSetting", "themeSetting", "language"] } },
 );

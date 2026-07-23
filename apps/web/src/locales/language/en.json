@@ -393,7 +393,6 @@
       "restoreDefault": "Restore Defaults",
       "regexPlaceholder": "Please enter a regular expression",
       "showTitleBar": "show title bar",
-      "isElectron": "Switch to desktop mode",
       "canvasScroll": "Canvas scroll",
       "canvasIsDisabled": "Canvas zoom",
       "agentCanvasScalingMethod": "Unlimited canvas wheel operation on production page",
@@ -423,15 +422,10 @@
     "about": {
       "slogan": "Open-source AI-driven Comic / Storyboard creation tool",
       "latestVersion": "You are on the latest version",
-      "checkUpdate": "Check for Updates",
       "codeRepository": "Code Repository",
       "githubRepo": "GitHub Repository",
       "giteeRepo": "Gitee Repository",
       "versionUpdate": "Version Update",
-      "checkUpdateGithub": "Check Update (GitHub)",
-      "getFromGithub": "Get the latest release from GitHub",
-      "checkUpdateGitee": "Check Update (Gitee)",
-      "getFromGitee": "Get the latest release from Gitee",
       "license": "License",
       "licenseDesc": "Open-source license agreement · Click for details",
       "updateAvailable": "new version found",
@@ -446,9 +440,7 @@
       "updateSuccess": "Update successful, please restart the app",
       "updateFailed": "Update failed, please try again",
       "noUpdate": "You are already on the latest version",
-      "upToDate": "New version detected",
-      "confirmReinstall": "Copy link",
-      "reinstallRequired": "The browser will automatically open and download. If it does not open, please open it manually."
+      "upToDate": "New version detected"
     },
     "logout": {
       "warning": "After logging out, you will need to log in again to access the system.",
@@ -515,7 +507,7 @@
       "devtoolsDesc": "After being turned on, a .devtools folder will be created in the Toonflow installation directory. Please ensure that Toonflow has write permissions (run as administrator).",
       "devtoolsDesc2": "Run npx {'@'}ai-sdk/devtools in this directory to enable telemetry debugging",
       "openDevtoolFailed": "Failed to open developer tools, please make sure Toonflow desktop is installed",
-      "notInElectron": "For WEB environment, please open the browser console manually",
+      "browserDevtool": "Use your browser developer tools",
       "msg": {
         "localStorageKeyRequired": "Please enter a localStorage key",
         "localStorageKeyExists": "This key already exists. Please use a different key",

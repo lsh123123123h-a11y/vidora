@@ -347,21 +347,14 @@
     "about": {
       "slogan": "Công cụ sáng tạo truyện tranh / phân cảnh mã nguồn mở do AI điều khiển",
       "latestVersion": "Đây là phiên bản mới nhất",
-      "checkUpdate": "Kiểm tra cập nhật",
       "codeRepository": "Kho lưu trữ mã nguồn",
       "githubRepo": "Kho GitHub",
       "giteeRepo": "Kho Gitee",
       "versionUpdate": "Cập nhật phiên bản",
-      "checkUpdateGithub": "Kiểm tra cập nhật (GitHub)",
-      "getFromGithub": "Lấy phiên bản mới nhất từ GitHub Release",
-      "checkUpdateGitee": "Kiểm tra cập nhật (Gitee)",
-      "getFromGitee": "Lấy phiên bản mới nhất từ Gitee Release",
       "license": "Giấy phép",
       "licenseDesc": "Thỏa thuận giấy phép mã nguồn mở · Nhấn để xem chi tiết",
       "updateAvailable": "phiên bản mới được tìm thấy",
-      "upToDate": "Đã phát hiện phiên bản mới",
-      "confirmReinstall": "Sao chép liên kết",
-      "reinstallRequired": "Trình duyệt sẽ tự động mở và tải xuống. Nếu nó không mở, hãy mở nó bằng tay."
+      "upToDate": "Đã phát hiện phiên bản mới"
     },
     "logout": {
       "warning": "Sau khi đăng xuất, bạn cần đăng nhập lại để tiếp tục sử dụng hệ thống.",
@@ -402,7 +395,7 @@
       "devtoolsDesc": "Sau khi bật lên sẽ tạo một thư mục .devtools trong thư mục cài đặt Toonflow. Hãy đảm bảo rằng Toonflow có quyền ghi (chạy với tư cách quản trị viên).",
       "devtoolsDesc2": "Chạy npx {'@'}ai-sdk/devtools trong thư mục này để bật gỡ lỗi đo từ xa",
       "openDevtoolFailed": "Không mở được công cụ dành cho nhà phát triển, vui lòng đảm bảo đã cài đặt Toonflow desktop",
-      "notInElectron": "Đối với môi trường WEB, vui lòng mở bảng điều khiển trình duyệt theo cách thủ công"
+      "browserDevtool": "Hãy sử dụng công cụ dành cho nhà phát triển của trình duyệt"
     }
   },
   "workbench": {

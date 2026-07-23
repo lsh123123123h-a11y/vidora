@@ -515,15 +515,10 @@
     "about": {
       "slogan": "开源的AI驱动漫画 / 分镜创作工具",
       "latestVersion": "当前为最新版本",
-      "checkUpdate": "检查更新",
       "codeRepository": "代码仓库",
       "githubRepo": "GitHub 仓库",
       "giteeRepo": "Gitee 仓库",
       "versionUpdate": "版本更新",
-      "checkUpdateGithub": "检查更新(GitHub)",
-      "getFromGithub": "从GitHub Release 获取最新版本",
-      "checkUpdateGitee": "检查更新(Gitee)",
-      "getFromGitee": "从Gitee Release获取最新版本",
       "license": "许可证",
       "licenseDesc": "开源许可协议·点击查看详情",
       "updateAvailable": "发现新版本",
@@ -538,9 +533,7 @@
       "updateSuccess": "更新成功，请重启应用",
       "updateFailed": "更新失败，请重试",
       "noUpdate": "当前已是最新版本",
-      "upToDate": "检测到新版本",
-      "reinstallRequired": "将自动打开浏览器并下载，如未打开请手动打开",
-      "confirmReinstall": "复制链接"
+      "upToDate": "检测到新版本"
     },
     "logout": {
       "warning": "退出登录后，您需要重新登录才能继续使用系统。",
@@ -607,7 +600,7 @@
       "devtoolsDesc": "开启后会在Toonflow安装目录创建.devtools文件夹，请确保Toonflow有写入权限（管理员身份运行）。",
       "devtoolsDesc2": "在该目录运行 npx {'@'}ai-sdk/devtools 开启遥测调试",
       "openDevtoolFailed": "打开开发者工具失败，请确保已安装Toonflow桌面端",
-      "notInElectron": "WEB环境请手动打开浏览器控制台",
+      "browserDevtool": "请使用浏览器开发者工具",
       "msg": {
         "localStorageKeyRequired": "请输入 localStorage 的 key",
         "localStorageKeyExists": "该 key 已存在，请更换后再保存",

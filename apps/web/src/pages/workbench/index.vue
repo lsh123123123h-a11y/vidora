@@ -19,11 +19,6 @@
         </t-tooltip>
       </div>
       <div class="footItem fc ac">
-        <t-tooltip :content="$t('workbench.menu.feedbackQuestions')" placement="right" destroyOnClose :showArrow="false">
-          <div class="item c" @click="openFeedback">
-            <i-bill class="icon" />
-          </div>
-        </t-tooltip>
         <t-tooltip :content="$t('workbench.menu.settings')" placement="right" destroyOnClose :showArrow="false">
           <div class="item c" @click="showSetting = true">
             <i-setting-one class="icon" />
@@ -115,9 +110,6 @@ async function jumpGithub() {
   window.open("https://github.com/lsh123123123h-a11y/vidora", "_blank", "noopener,noreferrer");
 }
 
-async function openFeedback() {
-  window.open("https://docs.qq.com/smartsheet/form/EmvmQBrmlPmr%2Fss_vsqk2v%2FvhiGzE?tab=ss_vsqk2v", "_blank", "noopener,noreferrer");
-}
 </script>
 
 <style lang="scss" scoped>

@@ -637,8 +637,7 @@
       "production": "视频生产",
       "assetCenter": "资产中心",
       "settings": "设置",
-      "jumpGithub": "跳转Github",
-      "feedbackQuestions": "反馈问题"
+      "jumpGithub": "跳转Github"
     },
     "project": {
       "title": "我的项目",

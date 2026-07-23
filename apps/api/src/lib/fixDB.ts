@@ -4,7 +4,7 @@ import fs from "fs";
 import { Knex } from "knex";
 import db from "@/utils/db";
 import { transform } from "sucrase";
-import rawVendorData from "./vendor.json";
+import rawVendorData from "../../data/vendor/vendor.json";
 
 const vendorData = rawVendorData as Record<string, string>;
 
@@ -177,16 +177,6 @@ export default async (knex: Knex): Promise<void> => {
   await dropColumn("o_vendorConfig", "icon");
   await dropColumn("o_vendorConfig", "inputs");
   await dropColumn("o_vendorConfig", "createTime");
-
-  // Remove the legacy hosted relay and any agent bindings that still point to it.
-  await u.db("o_vendorConfig").where("id", "toonflow").delete();
-  await u.db("o_agentDeploy").where("vendorId", "toonflow").update({
-    model: "",
-    modelName: "",
-    vendorId: null,
-  });
-  const legacyVendorPath = path.join(u.getPath("vendor"), "toonflow.ts");
-  if (fs.existsSync(legacyVendorPath)) fs.rmSync(legacyVendorPath, { force: true });
 
   const volcengineVer = await u.vendor.getVendor("volcengine").version;
   if (Number(volcengineVer) < 2.4) {

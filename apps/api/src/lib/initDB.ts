@@ -2,6 +2,9 @@ import { Knex } from "knex";
 import { v4 as uuid } from "uuid";
 import { getEmbedding } from "@/utils/agent/embedding";
 
+const initialAdminName = process.env.VIDORA_ADMIN_USERNAME?.trim() || "admin";
+const initialAdminPassword = process.env.VIDORA_ADMIN_PASSWORD?.trim() || uuid().replace(/-/g, "").slice(0, 20);
+
 interface TableSchema {
   name: string;
   builder: (table: Knex.CreateTableBuilder) => void;
@@ -21,7 +24,10 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
         table.unique(["id"]);
       },
       initData: async (knex) => {
-        await knex("o_user").insert([{ id: 1, name: "admin", password: "admin123" }]);
+        await knex("o_user").insert([{ id: 1, name: initialAdminName, password: initialAdminPassword }]);
+        if (!process.env.VIDORA_ADMIN_PASSWORD) {
+          console.warn(`[Vidora] 未设置 VIDORA_ADMIN_PASSWORD，首次管理员密码为: ${initialAdminPassword}`);
+        }
       },
     },
     //项目表
@@ -274,7 +280,7 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
         await knex("o_setting").insert([
           {
             key: "tokenKey",
-            value: uuid().slice(0, 8),
+            value: uuid().replace(/-/g, ""),
           },
           {
             key: "messagesPerSummary",
@@ -564,12 +570,6 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
       },
       initData: async (knex) => {
         await knex("o_vendorConfig").insert([
-          {
-            id: "toonflow",
-            inputValues: "{}",
-            models: "[]",
-            enable: 0,
-          },
           {
             id: "deepseek",
             inputValues: "{}",

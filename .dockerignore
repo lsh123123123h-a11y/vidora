@@ -14,6 +14,8 @@ secrets/**
 **/node_modules/**
 **/dist
 **/dist/**
+apps/api/data/serve/**
+apps/api/data/web/**
 **/build
 **/build/**
 **/*.sqlite

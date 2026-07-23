@@ -15,13 +15,18 @@ import u from "@/utils";
 import jwt from "jsonwebtoken";
 import socketInit from "@/socket/index";
 import { ensureThumbnail, ThumbnailSize } from "@/utils/image";
+import { allowDevelopmentCors, isAllowedOrigin } from "@/runtimeCors";
 
 const app = express();
 const server = http.createServer(app);
 
 export default async function startServe(randomPort: Boolean = false) {
   await u.writeVersion();
-  const io = new Server(server, { cors: { origin: "*" } });
+  const allowCors = allowDevelopmentCors(process.env.NODE_ENV);
+  const io = new Server(server, {
+    cors: { origin: allowCors },
+    allowRequest: (req, callback) => callback(null, isAllowedOrigin(req.headers.origin, req.headers.host, process.env.NODE_ENV)),
+  });
   socketInit(io);
 
   if (process.env.NODE_ENV == "dev") await buildRoute();
@@ -29,7 +34,7 @@ export default async function startServe(randomPort: Boolean = false) {
   expressWs(app);
 
   app.use(logger("dev"));
-  app.use(cors({ origin: "*" }));
+  app.use(cors({ origin: allowCors }));
   app.use(express.json({ limit: "100mb" }));
   app.use(express.urlencoded({ extended: true, limit: "100mb" }));
 

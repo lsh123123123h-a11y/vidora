@@ -51,7 +51,7 @@
     }
   },
   "settings": {
-    "title": "ToonFlow 設定",
+    "title": "Vidora 設定",
     "menu": {
       "language": "語言設定",
       "vendorConfig": "模型服務",
@@ -198,14 +198,14 @@
       "confirm": "確認",
       "cancel": "取消",
       "selectModel": "選擇模型",
-      "fillKeyHeader": "填入 Toonflow 平台的官方 KEY",
+      "fillKeyHeader": "填入供應商 API Key",
       "keyPlaceholder": "請輸入 KEY",
       "save": "儲存",
       "msg": {
         "notAvailable": "該功能暫未開放，敬請期待",
         "configSuccess": "設定成功",
         "updateConfigFailed": "更新設定失敗：",
-        "keyValid": "KEY 有效，已成功連接 Toonflow 平台",
+        "keyValid": "KEY 有效，已成功連接 Vidora 平台",
         "keyInvalid": "KEY 無效，請檢查後重新輸入：",
         "enterKey": "請輸入 KEY",
         "saveFailed": "儲存失敗：",
@@ -406,8 +406,8 @@
       "warning": "以下為開發者工具，謹慎操作！",
       "openDevtool": "打開",
       "devtoolsDoc": "文件地址",
-      "devtoolsDesc": "開啟後會在Toonflow安裝目錄建立.devtools資料夾，請確保Toonflow有寫入權限（管理員身分執行）。",
-      "openDevtoolFailed": "開啟開發者工具失敗，請確保已安裝Toonflow桌面端",
+      "devtoolsDesc": "開啟後會在Vidora安裝目錄建立.devtools資料夾，請確保Vidora有寫入權限（管理員身分執行）。",
+      "openDevtoolFailed": "開啟開發者工具失敗，請確保已安裝Vidora桌面端",
       "browserDevtool": "請使用瀏覽器開發者工具"
     }
   },
@@ -670,7 +670,7 @@
       "selectAssets": "選擇資產",
       "noAssets": "暫未關聯資產",
       "selectAssetsTitle": "選擇關聯資產",
-      "welcomeMsg": "你好！我是 Toonflow 智慧助手，需要我開始為您生成劇本嗎？",
+      "welcomeMsg": "你好！我是 Vidora 智慧助手，需要我開始為您生成劇本嗎？",
       "start": "開始",
       "memoryType": {
         "message": "訊息記憶",
@@ -1400,7 +1400,7 @@
     "prompt": "提示詞"
   },
   "hello": {
-    "welcomeTitle": "歡迎使用 ToonFlow",
+    "welcomeTitle": "歡迎使用 Vidora",
     "welcomeDesc": "AI 驅動的漫畫創作工作流程平台，讓我們花一分鐘完成初始設定。",
     "startConfig": "開始配置",
     "skip": "跳過引導",

@@ -1,6 +1,8 @@
 {
-  "name": "toonflow_web",
-  "version": "0.0.0",
+  "name": "vidora-web",
+  "version": "1.0.0",
+  "description": "Vidora browser application.",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",

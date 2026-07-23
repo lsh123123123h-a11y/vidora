@@ -216,7 +216,7 @@
                 <div v-for="(row, rowIndex) in modelFormData.durationResolutionMap" :key="rowIndex" class="drmRow">
                   <div class="drmRowIndex">{{ rowIndex + 1 }}</div>
                   <t-tag-input v-model="row.duration" :placeholder="$t('settings.vendor.enterAndPress')" class="drmInput" />
-                  <div class="drmArrow">→</div>
+                <div class="drmArrow">→</div>
                   <t-tag-input v-model="row.resolution" :placeholder="$t('settings.vendor.enterAndPress')" class="drmInput" />
                   <t-button
                     variant="text"
@@ -361,7 +361,7 @@
         </div>
         <div class="linkAdd" v-if="addMode == 'linkAdd'">
           <t-alert theme="warning" style="margin-bottom: 20px">
-            请填写 TypeScript 代码文件的链接（.ts 文件），不要填 API 地址或其他无关链接。 确认后 Toonflow 会自动加载该代码，请确保链接来源可信。
+              请填写 TypeScript 代码文件的链接（.ts 文件），不要填 API 地址或其他无关链接。 确认后 Vidora 会自动加载该代码，请确保链接来源可信。
           </t-alert>
           <t-input v-model="link" :placeholder="$t('settings.vendor.linkAddPlaceholder')"></t-input>
           <div style="margin-top: 10px; text-align: right; width: 100%">
@@ -1189,7 +1189,7 @@ function createCompatibleVendorCode(vendorId: string, name: string) {
   const vendor = {
     id: vendorId,
     version: "2.0",
-    author: "Toonflow",
+    author: "Vidora",
     name,
     description: "OpenAI 兼容中转站。模型列表由 /models 自动拉取。",
     inputs: [

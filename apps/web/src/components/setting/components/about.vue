@@ -2,9 +2,9 @@
   <div class="about">
     <t-card bordered :style="{ width: '100%' }" class="logoCard">
       <div class="f">
-        <img src="@/assets/logo.png" alt="ToonFlow Logo" class="logo" />
+        <img src="/vidora-logo.jpg" alt="Vidora Logo" class="logo" />
         <div class="appName">
-          <div class="name">ToonFlow</div>
+          <div class="name">Vidora</div>
           <div class="data">{{ $t("settings.about.slogan") }}</div>
           <div class="version">
             <t-tag theme="primary" shape="round" size="small" style="padding: 10px">v{{ version }}</t-tag>
@@ -23,23 +23,6 @@
             <div style="margin-left: 15px">
               <div>
                 <span style="font-size: 15px; font-weight: 900">{{ $t("settings.about.githubRepo") }}</span>
-              </div>
-              <div>
-                <span style="font-size: 12px; color: #666">https://github.com/lsh123123123h-a11y/vidora</span>
-              </div>
-            </div>
-          </div>
-          <i-right theme="outline" size="18" />
-        </div>
-        <t-divider></t-divider>
-        <div class="ac jb" style="cursor: pointer" @click="openLink('https://github.com/lsh123123123h-a11y/vidora')">
-          <div class="f">
-            <div class="gitee">
-              <i-code fill="#000" theme="outline" size="20" class="c" style="width: 100%; height: 100%" />
-            </div>
-            <div style="margin-left: 15px">
-              <div>
-                <span style="font-size: 15px; font-weight: 900">{{ $t("settings.about.giteeRepo") }}</span>
               </div>
               <div>
                 <span style="font-size: 12px; color: #666">https://github.com/lsh123123123h-a11y/vidora</span>
@@ -131,12 +114,6 @@ onMounted(async () => {
   .codeRepository {
     margin-top: 15px;
     .github {
-      width: 50px;
-      height: 50px;
-      border-radius: 8px;
-      background-color: #ececec;
-    }
-    .gitee {
       width: 50px;
       height: 50px;
       border-radius: 8px;

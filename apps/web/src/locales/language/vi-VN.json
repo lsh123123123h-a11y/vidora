@@ -42,7 +42,7 @@
     }
   },
   "settings": {
-    "title": "Cài đặt ToonFlow",
+    "title": "Cài đặt Vidora",
     "menu": {
       "language": "Cài đặt ngôn ngữ",
       "vendorConfig": "Dịch vụ mô hình",
@@ -189,19 +189,18 @@
       "confirm": "Xác nhận",
       "cancel": "Hủy",
       "selectModel": "Chọn mô hình",
-      "fillKeyHeader": "Điền KEY chính thức của nền tảng Toonflow",
+      "fillKeyHeader": "Nhập API key của nhà cung cấp",
       "keyPlaceholder": "Vui lòng nhập KEY",
       "save": "Lưu",
       "msg": {
         "notAvailable": "Tính năng này hiện chưa khả dụng, vui lòng chờ",
         "configSuccess": "Cấu hình thành công",
         "updateConfigFailed": "Cập nhật cấu hình thất bại:",
-        "keyValid": "KEY hợp lệ, kết nối với nền tảng Toonflow thành công",
+        "keyValid": "KEY hợp lệ, kết nối với nền tảng Vidora thành công",
         "keyInvalid": "KEY không hợp lệ, vui lòng kiểm tra và nhập lại:",
         "enterKey": "Vui lòng nhập KEY",
         "saveFailed": "Lưu thất bại:",
-        "getAgentListFailed": "Lấy danh sách cấu hình Agent thất bại:",
-        "toonflowNotFound": "Trạm trung chuyển chính thức của Toonflow không tồn tại"
+        "getAgentListFailed": "Lấy danh sách cấu hình Agent thất bại:"
       },
       "temperature": "nhiệt độ"
     },
@@ -392,9 +391,9 @@
       "warning": "Sau đây là các công cụ dành cho nhà phát triển, vui lòng sử dụng thận trọng!",
       "openDevtool": "Mở",
       "devtoolsDoc": "Địa chỉ tài liệu",
-      "devtoolsDesc": "Sau khi bật lên sẽ tạo một thư mục .devtools trong thư mục cài đặt Toonflow. Hãy đảm bảo rằng Toonflow có quyền ghi (chạy với tư cách quản trị viên).",
+      "devtoolsDesc": "Sau khi bật lên sẽ tạo một thư mục .devtools trong thư mục cài đặt Vidora. Hãy đảm bảo rằng Vidora có quyền ghi (chạy với tư cách quản trị viên).",
       "devtoolsDesc2": "Chạy npx {'@'}ai-sdk/devtools trong thư mục này để bật gỡ lỗi đo từ xa",
-      "openDevtoolFailed": "Không mở được công cụ dành cho nhà phát triển, vui lòng đảm bảo đã cài đặt Toonflow desktop",
+      "openDevtoolFailed": "Không mở được công cụ dành cho nhà phát triển, vui lòng đảm bảo đã cài đặt Vidora desktop",
       "browserDevtool": "Hãy sử dụng công cụ dành cho nhà phát triển của trình duyệt"
     }
   },
@@ -657,7 +656,7 @@
       "selectAssets": "Chọn tài nguyên",
       "noAssets": "Chưa liên kết tài nguyên",
       "selectAssetsTitle": "Chọn tài nguyên liên kết",
-      "welcomeMsg": "Xin chào! Tôi là trợ lý thông minh Toonflow, bạn có muốn tôi bắt đầu tạo kịch bản cho bạn không?",
+      "welcomeMsg": "Xin chào! Tôi là trợ lý thông minh Vidora, bạn có muốn tôi bắt đầu tạo kịch bản cho bạn không?",
       "start": "Bắt đầu",
       "memoryType": {
         "message": "Bộ nhớ tin nhắn",
@@ -1409,7 +1408,7 @@
     "prompt": "lời nhắc"
   },
   "hello": {
-    "welcomeTitle": "Chào mừng đến với ToonFlow",
+    "welcomeTitle": "Chào mừng đến với Vidora",
     "welcomeDesc": "Nền tảng quy trình tạo truyện tranh do AI điều khiển, chúng ta hãy dành một phút để hoàn thành cấu hình ban đầu.",
     "startConfig": "Bắt đầu cấu hình",
     "skip": "Bỏ qua khởi động",

@@ -1,0 +1,32 @@
+services:
+  vidora:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vidora:local
+    restart: unless-stopped
+    ports:
+      - "${VIDORA_PORT:-10588}:10588"
+    environment:
+      NODE_ENV: prod
+      HOST: 0.0.0.0
+      PORT: 10588
+      VIDORA_DATA_DIR: /app/data
+      VIDORA_WEB_DIR: /app/public
+      VIDORA_ADMIN_USERNAME: ${VIDORA_ADMIN_USERNAME:-admin}
+      VIDORA_ADMIN_PASSWORD: ${VIDORA_ADMIN_PASSWORD:-}
+    volumes:
+      - vidora-data:/app/data
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:10588/healthz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  vidora-data:

@@ -53,7 +53,7 @@
     }
   },
   "settings": {
-    "title": "ToonFlow设置",
+    "title": "Vidora设置",
     "modelMap": {
       "imageModel": "图像模型",
       "videoModel": "视频模型",
@@ -272,19 +272,18 @@
       "confirm": "确认",
       "cancel": "取消",
       "selectModel": "选择模型",
-      "fillKeyHeader": "填入Toonflow平台的官方KEY",
+      "fillKeyHeader": "填入供应商 API Key",
       "keyPlaceholder": "请输入 KEY",
       "save": "保存",
       "msg": {
         "notAvailable": "该功能暂未开放，敬请期待",
         "configSuccess": "配置成功",
         "updateConfigFailed": "更新配置失败：",
-        "keyValid": "KEY有效，已成功连接Toonflow平台",
+        "keyValid": "KEY有效，已成功连接Vidora平台",
         "keyInvalid": "KEY无效，请检查后重新输入：",
         "enterKey": "请输入 KEY",
         "saveFailed": "保存失败：",
-        "getAgentListFailed": "获取Agent配置列表失败：",
-        "toonflowNotFound": "Toonflow官方中转站不存在"
+        "getAgentListFailed": "获取Agent配置列表失败："
       },
       "temperature": "温度"
     },
@@ -410,7 +409,7 @@
     "skill": {
       "scanSkills": "扫描Skills",
       "addSkill": "新增 Skill",
-      "importFromHub": "Toonflow-Hub 导入",
+      "importFromHub": "导入 Skill 包",
       "filterType": "类型",
       "filterAttribution": "归属",
       "searchPlaceholder": "按名称搜索 skill",
@@ -430,7 +429,7 @@
       "embedding": "向量化",
       "edit": "编辑",
       "delete": "删除",
-      "importFromHubDialog": "从 Toonflow-Hub 导入",
+      "importFromHubDialog": "导入 Skill 包",
       "shareLink": "分享链接",
       "editSkillTitle": "编辑 Skill-",
       "addSkillTitle": "新增 Skill",
@@ -597,9 +596,9 @@
       "warning": "以下为开发者工具，谨慎操作！",
       "openDevtool": "打开",
       "devtoolsDoc": "文档地址",
-      "devtoolsDesc": "开启后会在Toonflow安装目录创建.devtools文件夹，请确保Toonflow有写入权限（管理员身份运行）。",
+      "devtoolsDesc": "开启后会在Vidora安装目录创建.devtools文件夹，请确保Vidora有写入权限（管理员身份运行）。",
       "devtoolsDesc2": "在该目录运行 npx {'@'}ai-sdk/devtools 开启遥测调试",
-      "openDevtoolFailed": "打开开发者工具失败，请确保已安装Toonflow桌面端",
+      "openDevtoolFailed": "打开开发者工具失败，请确保已安装Vidora桌面端",
       "browserDevtool": "请使用浏览器开发者工具",
       "msg": {
         "localStorageKeyRequired": "请输入 localStorage 的 key",
@@ -886,7 +885,7 @@
       "selectAssets": "选择资产",
       "noAssets": "暂未关联资产",
       "selectAssetsTitle": "选择关联资产",
-      "welcomeMsg": "你好！我是 Toonflow 智能助手，需要我开始为您生成剧本吗？",
+      "welcomeMsg": "你好！我是 Vidora 智能助手，需要我开始为您生成剧本吗？",
       "start": "开始",
       "memoryType": {
         "message": "消息记忆",
@@ -1674,7 +1673,7 @@
   "workbench.production.node.storyboard.deleteNode": "删除",
   "workbench.production.node.storyboard.confirmDeleteBody": "确认是否删除该分镜",
   "hello": {
-    "welcomeTitle": "欢迎使用 ToonFlow",
+    "welcomeTitle": "欢迎使用 Vidora",
     "welcomeDesc": "AI 驱动的漫画创作工作流平台，让我们花一分钟完成初始配置。",
     "startConfig": "开始配置",
     "skip": "跳过引导",

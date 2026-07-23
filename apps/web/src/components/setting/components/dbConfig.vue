@@ -196,7 +196,7 @@ async function exportData() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `toonflow-backup-${Date.now()}.json`;
+    a.download = `vidora-backup-${Date.now()}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

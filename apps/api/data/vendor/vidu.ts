@@ -1,4 +1,4 @@
-//如需遥测AI请使用在toonflow安装目录运行npx @ai-sdk/devtools （要求在其他设置中打开遥测功能，且toonflow有权限在安装目录创建.devtools文件夹）
+// 如需遥测 AI，可在开发环境中运行 npx @ai-sdk/devtools。
 // ==================== 类型定义 ====================
 // 文本模型
 interface TextModel {
@@ -91,7 +91,7 @@ declare const jsonwebtoken: any;
 // ==================== 供应商数据 ====================
 const vendor: VendorConfig = {
   id: "vidu",
-  author: "搬砖的Coder",
+  author: "Vidora",
   description:
     "Vidu 官方视频生成平台。 [前往平台](https://platform.vidu.cn/login/)",
   name: "Vidu 开放平台",

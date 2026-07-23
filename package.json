@@ -1,0 +1,14 @@
+{
+  "name": "vidora",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vidora: self-hosted AI story and short-video production workspace.",
+  "license": "Apache-2.0",
+  "packageManager": "yarn@1.22.22",
+  "scripts": {
+    "build": "yarn --cwd apps/api build && yarn --cwd apps/web build",
+    "test": "yarn --cwd apps/api test && yarn --cwd apps/web test",
+    "type-check": "yarn --cwd apps/web type-check",
+    "lint:api": "yarn --cwd apps/api lint"
+  }
+}

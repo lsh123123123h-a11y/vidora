@@ -178,6 +178,16 @@ export default async (knex: Knex): Promise<void> => {
   await dropColumn("o_vendorConfig", "inputs");
   await dropColumn("o_vendorConfig", "createTime");
 
+  // Remove the legacy hosted relay and any agent bindings that still point to it.
+  await u.db("o_vendorConfig").where("id", "toonflow").delete();
+  await u.db("o_agentDeploy").where("vendorId", "toonflow").update({
+    model: "",
+    modelName: "",
+    vendorId: null,
+  });
+  const legacyVendorPath = path.join(u.getPath("vendor"), "toonflow.ts");
+  if (fs.existsSync(legacyVendorPath)) fs.rmSync(legacyVendorPath, { force: true });
+
   const volcengineVer = await u.vendor.getVendor("volcengine").version;
   if (Number(volcengineVer) < 2.4) {
     u.vendor.writeCode("volcengine", vendorData["volcengine.ts"]);
@@ -185,10 +195,6 @@ export default async (knex: Knex): Promise<void> => {
   const minimaxVer = await u.vendor.getVendor("minimax").version;
   if (Number(minimaxVer) < 2.1) {
     u.vendor.writeCode("minimax", vendorData["minimax.ts"]);
-  }
-  const toonflowVer = await u.vendor.getVendor("toonflow").version;
-  if (Number(toonflowVer) < 3.2) {
-    u.vendor.writeCode("toonflow", vendorData["toonflow.ts"]);
   }
 };
 
@@ -202,7 +208,7 @@ async function tempOnsert(tsCode: string) {
     id: vendor.id,
     inputValues: JSON.stringify(vendor.inputValues ?? {}),
     models: JSON.stringify([]),
-    enable: vendor.id == "toonflow" ? 1 : 0,
+    enable: 0,
   });
   u.vendor.writeCode(vendor.id, tsCode);
 }

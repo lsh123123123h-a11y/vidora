@@ -29,6 +29,5 @@ export default router.post("/", async (req, res) => {
     )
   ).filter((i) => Boolean(i));
 
-  list.sort((a, b) => (a!.id === "toonflow" ? -1 : b!.id === "toonflow" ? 1 : 0));
   res.status(200).send(success(list));
 });

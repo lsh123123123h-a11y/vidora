@@ -1,5 +1,5 @@
 /**
- * Toonflow AI供应商模板 - 火山引擎(豆包)
+ * Vidora AI供应商模板 - 火山引擎(豆包)
  * @version 2.0
  */
 
@@ -134,7 +134,7 @@ declare const exports: {
 const vendor: VendorConfig = {
   id: "volcengine",
   version: "2.4",
-  author: "leeqi",
+  author: "Vidora",
   name: "火山引擎(豆包)",
   description: "火山引擎豆包大模型，支持文本、图片生成、视频生成等能力。\n\n需要在[火山引擎控制台](https://console.volcengine.com/ark)获取API密钥。",
   icon: "",

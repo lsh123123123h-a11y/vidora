@@ -48,35 +48,38 @@ export default router.post("/", async (req, res) => {
       .filter((d) => d.isDirectory())
       .map((d) => d.name);
 
-    const result = await Promise.all(
-      styleDirs.map(async (directorManual) => {
-        const styleDir = path.join(artPromptsDir, directorManual);
-        const images = await readAllImages(directorManual);
-        const readmePath = path.join(styleDir, "README.md");
-        const readmeContent = fs.readFileSync(readmePath, "utf-8");
-        const firstLine = readmeContent.split("\n")[0].replace(/--/g, "");
-        const data = DATA_MAP.map(({ label, value, subDir }) => {
-          let mdPath: string;
-          if (subDir) {
-            mdPath = path.join(styleDir, subDir, `${value}.md`);
-          } else {
-            mdPath = path.join(styleDir, `${value}.md`);
-          }
-          return {
-            label,
-            value,
-            data: readMd(mdPath),
-          };
-        });
+    const result = (
+      await Promise.all(
+        styleDirs.map(async (directorManual) => {
+          const styleDir = path.join(artPromptsDir, directorManual);
+          const readmePath = path.join(styleDir, "README.md");
+          if (!fs.existsSync(readmePath)) return null;
+          const images = await readAllImages(directorManual);
+          const readmeContent = fs.readFileSync(readmePath, "utf-8");
+          const firstLine = readmeContent.split("\n")[0].replace(/--/g, "");
+          const data = DATA_MAP.map(({ label, value, subDir }) => {
+            let mdPath: string;
+            if (subDir) {
+              mdPath = path.join(styleDir, subDir, `${value}.md`);
+            } else {
+              mdPath = path.join(styleDir, `${value}.md`);
+            }
+            return {
+              label,
+              value,
+              data: readMd(mdPath),
+            };
+          });
 
-        return {
-          name: firstLine,
-          image: images,
-          directorManual: directorManual,
-          data,
-        };
-      }),
-    );
+          return {
+            name: firstLine,
+            image: images,
+            directorManual: directorManual,
+            data,
+          };
+        }),
+      )
+    ).filter(Boolean);
     res.status(200).send(success(result));
   } catch (err) {
     res.status(500).send({ error: String(err) });
